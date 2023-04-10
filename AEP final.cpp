@@ -203,7 +203,7 @@ bool login(a,b){
 
                     if (strcmp(line, b) == 0) {
                         fclose(file);
-                        return 1; // a and b are found in consecutive lines
+                        return 1;
                     }
                 }
             }
@@ -211,10 +211,9 @@ bool login(a,b){
         fclose(file);
     }
 
-    return 0; // a and/or b not found or error reading file
+    return 0; 
 }
 
-To use this function, simply call it and pass the variables a and b as arguments:
 	
 if (verifyFile("line A", "line B")) {
     printf("Line A and Line B were found in consecutive lines!\n");
