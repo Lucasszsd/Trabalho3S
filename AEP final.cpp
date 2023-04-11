@@ -9,8 +9,8 @@
 
 char usuarioAdm [10] = "ADMIN" ,senhaAdm[10] = "ADMIN";
 int a, b;
-bool geral = true;
-int lerSetas(),linha,coluna,z,seletorMenu;
+bool geral = true,usuarioLogado;
+int linha,coluna,z,seletorMenu;
 
 //PROCEDIMENTOS : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bool login(a,b);
@@ -67,8 +67,8 @@ int main() {
 		printf("------------------------------\n");
 		fflush(stdin);
 		
-		
-		
+		//usuarioLogado = login(usuario,senha);
+	
 		if (strcmp(usuario,usuarioAdm) == 0 && strcmp(senha,senhaAdm) == 0){
 			clrscr();
 			pintaCabecalho();
@@ -193,17 +193,15 @@ bool login(a,b){
 
     if (file) {
         while (fgets(line, sizeof(line), file)) {
-            // remove newline character from line
             line[strcspn(line, "\n")] = 0;
 
             if (strcmp(line, a) == 0) {
-                // read next line
                 if (fgets(line, sizeof(line), file)) {
                     line[strcspn(line, "\n")] = 0;
 
                     if (strcmp(line, b) == 0) {
                         fclose(file);
-                        return 1;
+                        return true;
                     }
                 }
             }
@@ -211,16 +209,9 @@ bool login(a,b){
         fclose(file);
     }
 
-    return 0; 
+ 
 }
 
-	
-if (verifyFile("line A", "line B")) {
-    printf("Line A and Line B were found in consecutive lines!\n");
-} else {
-    printf("Line A and/or Line B not found.\n");
-    
-}
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
