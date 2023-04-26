@@ -8,7 +8,7 @@
 
 
 char usuarioAdm [10] = "ADMIN" ,senhaAdm[10] = "ADMIN";
-int a, b;
+int a, b , controleLogin;
 bool geral = true,usuarioLogado;
 int linha,coluna,z,seletorMenu;
 
@@ -50,8 +50,8 @@ int main() {
 	   
 		pintaCabecalho();
 		
-    	gotoxy(25,8);
-    	textbackground(WHITE);
+    		gotoxy(25,8);
+    		textbackground(WHITE);
 		printf("-----------------------------\n");
 		gotoxy(25,9);
 		printf(" *     Realizar Login     *\n");
@@ -74,7 +74,7 @@ int main() {
 			pintaCabecalho();
 			telaMenu();
 			numerosMenu();
-	    	textcolor(BLACK);
+	    		textcolor(BLACK);
 			textbackground(WHITE);
 			gotoxy(1,24);
 			printf("Digite a opcao desejada : ");
@@ -112,7 +112,13 @@ int main() {
 					sair();
 					break;
 			}
-		}
+		}else{
+			loop
+			controleLogin++
+			if(controleLogin == 3){
+				geral == false;
+			}
+		
 	}while (geral == true);
 	
     system("pause");
