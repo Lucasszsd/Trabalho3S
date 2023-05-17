@@ -7,7 +7,6 @@
 
 
 
-char usuarioAdm [10] = "ADMIN" ,senhaAdm[10] = "ADMIN";
 int a, b , controleLogin;
 bool geral = true,usuarioLogado;
 int linha,coluna,z,seletorMenu;
@@ -67,7 +66,7 @@ int main() {
 		printf("------------------------------\n");
 		fflush(stdin);
 		
-		//usuarioLogado = login(usuario,senha);
+		usuarioLogado = login(usuario,senha);
 	
 		if (strcmp(usuario,usuarioAdm) == 0 && strcmp(senha,senhaAdm) == 0){
 			clrscr();
@@ -79,7 +78,7 @@ int main() {
 			gotoxy(1,24);
 			printf("Digite a opcao desejada : ");
 			scanf("%i", &seletorMenu);
-			gotoxy(1,1);//ULTIMA DEFINE DE POSICAO TEM QUE ALTERAR DEPOIS <-------------------------
+			gotoxy(1,1);
 			fflush(stdin);
 			
 			
@@ -190,7 +189,7 @@ void pintaCabecalho() {
     printf("SISTEMA DE GESTAO DE ROTAS");
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-/*
+
 bool login(a,b){
     FILE *file;
     char line[100];
@@ -217,7 +216,7 @@ bool login(a,b){
 
  
 }
-*/
+
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
